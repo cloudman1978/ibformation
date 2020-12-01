@@ -1,0 +1,24 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'virtualbox'
+
+Vagrant.configure("2") do |config|
+  config.vm.define "deb10-test-vagrant1" do |config|
+  config.vm.hostname = "deb10-test-vagrant1"
+  config.vm.box = "debian/buster64"
+  config.vm.post_up_message = "VM 1 Ok"
+  end
+
+  config.vm.define "deb10-test-vagrant2" do |config|
+  config.vm.hostname = "deb10-test-vagrant2"
+  config.vm.box = "debian/buster64"
+  config.vm.post_up_message = "VM 2 Ok"
+  end
+
+  config.vm.define "deb10-test-vagrant3" do |config|
+  config.vm.hostname = "deb10-test-vagrant3"
+  config.vm.box = "debian/buster64"
+  config.vm.post_up_message = "VM 3 Ok"
+  end
+end
