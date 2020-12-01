@@ -1,0 +1,8 @@
+# playbook.yml
+---
+- hosts: all
+  become: true
+  roles:
+    - webserver
+    - database
+    - phpmyadmin

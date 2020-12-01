@@ -1,0 +1,14 @@
+# roles/database/tasks/main.yml
+---
+- name: #1. install unzip
+  apt: name=unzip state=present
+
+- name: Creates directory pma for phpmyadmin
+  file:
+    path: /var/www/html/pma
+    state: directory
+- name:  install phpmyadmin
+  unarchive:
+    src: https://files.phpmyadmin.net/phpMyAdmin/4.9.7/phpMyAdmin-4.9.7-all-languages.zip
+    dest: /var/www/html/pma
+    remote_src: yes
